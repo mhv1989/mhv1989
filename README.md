@@ -66,7 +66,7 @@
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mhv1989&theme=default" alt="Languages" />
   </a>
   <a href="https://github.com/mhv1989">
-    <img src="https://github-readme-stats.vercel.app/api?username=mhv1989&show_icons=true&include_all_commits=true&count_private=true&theme=default" alt="GitHub stats" />
+    <img src="https://github-readme-stats.vercel.app/api?username=mhv1989&show_icons=true&theme=default&hide_border=true&cache_seconds=86400" alt="GitHub stats" />
   </a>
 </div>
 
