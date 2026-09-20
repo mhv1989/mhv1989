@@ -66,7 +66,7 @@
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mhv1989&theme=default" alt="Languages" />
   </a>
   <a href="https://github.com/mhv1989">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/commits-per-month?username=mhv1989&theme=default" alt="Commits per month" />
+    <img src="https://github-readme-stats.vercel.app/api?username=mhv1989&show_icons=true&include_all_commits=true&count_private=true&theme=default" alt="GitHub stats" />
   </a>
 </div>
 
@@ -76,7 +76,7 @@
 
 <div align="center">
   <a href="https://github.com/mhv1989">
-    <img src="https://streak-stats.dankolmeier.vercel.app/?user=mhv1989&theme=default" alt="GitHub streak" />
+    <img src="https://streak-stats.demolab.com/?user=mhv1989&theme=default" alt="GitHub streak" />
   </a>
 </div>
 
