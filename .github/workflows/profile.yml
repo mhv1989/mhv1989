@@ -1,0 +1,57 @@
+name: Update latest repo in profile
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          set -e
+          OWNER="${{ github.repository_owner }}"
+          echo "DEBUG: owner=$OWNER token_present=${GITHUB_TOKEN:+yes}"
+          
+          API_RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -H "Authorization: token ***" \
+            -H "User-Agent: profile-bot" \
+            "https://api.github.com/users/$OWNER/repos?sort=pushed&per_page=20")
+          
+          HTTP_CODE=$(echo "$API_RESPONSE" | tail -1)
+          BODY=$(echo "$API_RESPONSE" | sed '$d')
+          echo "DEBUG: api_status=$HTTP_CODE"
+          
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "DEBUG: api_body=$(echo "$BODY" | head -c 200)"
+            exit 1
+          fi
+          
+          LATEST=$(echo "$BODY" | grep -o '"name": "[^"]*"' | head -1 | sed 's/"name": "//;s/"//')
+          LATEST_URL=$(echo "$BODY" | grep -o '"html_url": "[^"]*"' | head -1 | sed 's/"html_url": "//;s/"//')
+          echo "DEBUG: latest=$LATEST latest_url=$LATEST_URL"
+          
+          if [ -z "$LATEST" ]; then
+            echo "DEBUG: no repos found"
+            exit 0
+          fi
+          
+          LINE="- 🔭 I’m currently working on [$LATEST]($LATEST_URL)"
+          
+          if grep -q '^\- 🔭 I’m currently working on ' README.md; then
+            sed -i "s|^- 🔭 I’m currently working on .*|$LINE|" README.md
+          else
+            sed -i "1s|^|$LINE\n\n|" README.md
+          fi
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --quiet && echo "no change" && exit 0 || true
+          git add README.md
+          git commit -m "chore: update latest repo in profile"
+          git push
