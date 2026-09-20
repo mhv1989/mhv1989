@@ -4,7 +4,7 @@
 
 ### Lazy FullStack Developer | Building ideas that matter
 
-![Profile views](https://profile-counter.glitch.me/mhv1989/count.svg)
+![Profile views](https://komarev.com/ghpvc/?username=mhv1989&label=Profile%20views&color=0077b5)
 [![GitHub followers](https://img.shields.io/github/followers/mhv1989?label=Followers&color=0077b5)](https://github.com/mhv1989)
 [![GitHub stars](https://img.shields.io/github/stars/mhv1989?label=Stars&color=0077b5)](https://github.com/mhv1989)
 
@@ -85,6 +85,6 @@
 
 <div align="center">
   
-![Profile views](https://visitorbadge.io/api/visitors?username=mhv1989&label=Profile%20views&color=0077b5)
+![Profile views](https://komarev.com/ghpvc/?username=mhv1989&label=Profile%20views&color=0077b5)
 
 </div>
