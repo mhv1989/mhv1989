@@ -4,7 +4,7 @@
 
 ### Lazy FullStack Developer | Building ideas that matter
 
-![Profile views](https://hits.seeyoufarm.com/api/count/visiters?username=mhv1989)
+![Profile views](https://profile-counter.glitch.me/mhv1989/count.svg)
 [![GitHub followers](https://img.shields.io/github/followers/mhv1989?label=Followers&color=0077b5)](https://github.com/mhv1989)
 [![GitHub stars](https://img.shields.io/github/stars/mhv1989?label=Stars&color=0077b5)](https://github.com/mhv1989)
 
